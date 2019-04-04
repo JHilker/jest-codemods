@@ -147,6 +147,7 @@ inquirer
             message: 'Which parser do you want to use?',
             pageSize: PARSER_INQUIRER_CHOICES.length,
             choices: PARSER_INQUIRER_CHOICES,
+            default: 'babel',
         },
         {
             type: 'list',
@@ -154,6 +155,7 @@ inquirer
             message: 'Which test library would you like to migrate from?',
             pageSize: TRANSFORMER_INQUIRER_CHOICES.length,
             choices: TRANSFORMER_INQUIRER_CHOICES,
+            default: TRANSFORMER_JASMINE_GLOBALS,
         },
         {
             name: 'skipImportDetection',
@@ -170,6 +172,7 @@ inquirer
                     value: true,
                 },
             ],
+            default: true,
         },
         {
             name: 'standaloneMode',
@@ -185,6 +188,7 @@ inquirer
                     value: true,
                 },
             ],
+            default: false,
         },
         {
             type: 'list',
@@ -243,7 +247,7 @@ inquirer
 
         if (transformer === 'other') {
             return supportFailure(
-                'AVA, Chai, Expect.js, Expect@1.x, Mocha, Should.js and Tape'
+                'AVA, Chai, Expect.js, Expect@1.x, Jasmine, Mocha, Should.js and Tape'
             );
         }
 
